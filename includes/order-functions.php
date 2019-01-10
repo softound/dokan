@@ -308,6 +308,7 @@ function dokan_sync_insert_order( $order_id ) {
     $order              = wc_get_order( $order_id );
     $seller_id          = dokan_get_seller_id_by_order_id( $order_id );
     $order_total        = $order->get_total();
+    
     $order_status       = dokan_get_prop( $order, 'status' );
     $admin_commission   = dokan_get_admin_commission_by( $order, $seller_id );
     $net_amount         = $order_total - $admin_commission;
